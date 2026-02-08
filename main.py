@@ -1,22 +1,32 @@
-import pygame
+import pygame, time, random
+from pygame.locals import *
 
-pygame.init()
+def main():
+    #********** Game variables **********
+    quit = False
+    #********** Start game loop **********
+    while not quit:
+        window.fill((0,0,0))                            # Reset screen to black
+        #********** Process events **********
+        keyspressed = pygame.key.get_pressed()
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                quit = True
 
-WIDTH = 750
-HEIGHT = 1200
+        #********** Your game logic here **********
 
-screen = pygame.display.set_mode((HEIGHT, WIDTH))
+        
 
+        #********** Update screen **********
+        pygame.display.update()                         # Actually does the screen update
+        clock.tick(25)                                  # Run the game at 25 frames per second
 
-start = True
-while start:
-
-    pygame.draw.rect(screen, (0, 255, 0), (100, 150, 100, 100))
-
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            start = False  
-    pygame.display.flip()   
+#********** Initialise & run the game **********
+if __name__ == "__main__":
+    width, height = 800, 600                            # Set screen width,height
+    pygame.init()                                       # Start graphics system
+    pygame.mixer.init()                                 # Start audio system
+    window = pygame.display.set_mode((width, height))   # Create window
+    clock = pygame.time.Clock()                         # Create game clock
+    main()
+    pygame.quit()

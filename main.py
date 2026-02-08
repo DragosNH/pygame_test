@@ -6,6 +6,7 @@ def main():
     quit = False
     x = 50
     y = 650
+
     #********** Start game loop **********
     while not quit:
         window.fill((5,5,5))                            
@@ -48,7 +49,6 @@ def main():
         pygame.draw.rect(window, (15, 66, 150), player)
 
         pygame.draw.rect(window, (0, 150, 0), (0, 700, 1200, 50))
-
 
 
         #********** Update screen **********

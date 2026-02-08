@@ -15,7 +15,7 @@ def main():
 
         #********** Your game logic here **********
 
-        
+
 
         #********** Update screen **********
         pygame.display.update()                         # Actually does the screen update
@@ -23,7 +23,7 @@ def main():
 
 #********** Initialise & run the game **********
 if __name__ == "__main__":
-    width, height = 800, 600                            # Set screen width,height
+    width, height = 1200, 750                           # Set screen width,height
     pygame.init()                                       # Start graphics system
     pygame.mixer.init()                                 # Start audio system
     window = pygame.display.set_mode((width, height))   # Create window

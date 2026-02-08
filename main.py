@@ -14,8 +14,16 @@ def main():
                 quit = True
 
         #********** Your game logic here **********
+        x = 0
+        y = 650
+
+        player = (x, y, 30, 50)
+
+        pygame.draw.rect(window, (15, 66, 150), player)
 
         pygame.draw.rect(window, (0, 150, 0), (0, 700, 1200, 50))
+
+        
 
         #********** Update screen **********
         pygame.display.update()                         # Actually does the screen update

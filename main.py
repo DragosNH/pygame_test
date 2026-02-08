@@ -8,7 +8,7 @@ def main():
     y = 650
     #********** Start game loop **********
     while not quit:
-        window.fill((0,0,0))                            # Reset screen to black
+        window.fill((5,5,5))                            
         #********** Process events **********
         keyspressed = pygame.key.get_pressed()
         for event in pygame.event.get():
@@ -33,8 +33,13 @@ def main():
             x = 0
 
         if x >= window.get_width() - 30:
-            x= window.get_width() - 30
+            x = window.get_width() - 30
 
+        if y <= 0:
+            y = 0
+
+        if y >= window.get_height() - 80:
+            y = window.get_height() - 80
         #********** Your game logic here **********
         
 

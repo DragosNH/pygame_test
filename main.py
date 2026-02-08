@@ -4,6 +4,8 @@ from pygame.locals import *
 def main():
     #********** Game variables **********
     quit = False
+    x = 50
+    y = 650
     #********** Start game loop **********
     while not quit:
         window.fill((0,0,0))                            # Reset screen to black
@@ -13,9 +15,22 @@ def main():
             if event.type == QUIT:
                 quit = True
 
+            if keyspressed[ord("d")]:
+                x = x + 30
+
+            if keyspressed[ord("q")]:
+                x = x - 30
+
+            if keyspressed[ord("z")]:
+                y = y - 30
+
+            if keyspressed[ord("s")]:
+                y = y + 30
+
+
+
         #********** Your game logic here **********
-        x = 0
-        y = 650
+        
 
         player = (x, y, 30, 50)
 
@@ -23,11 +38,11 @@ def main():
 
         pygame.draw.rect(window, (0, 150, 0), (0, 700, 1200, 50))
 
-        
+
 
         #********** Update screen **********
         pygame.display.update()                         # Actually does the screen update
-        clock.tick(25)                                  # Run the game at 25 frames per second
+        clock.tick(35)                                  # Run the game at 25 frames per second
 
 #********** Initialise & run the game **********
 if __name__ == "__main__":

@@ -14,7 +14,7 @@ def main():
         for event in pygame.event.get():
             if event.type == QUIT:
                 quit = True
-
+        # --------- Directions ---------
             if keyspressed[ord("d")]:
                 x = x + 30
 
@@ -27,7 +27,13 @@ def main():
             if keyspressed[ord("s")]:
                 y = y + 30
 
+        # --------- Side collision ---------
+        
+        if x <= 0:
+            x = 0
 
+        if x >= window.get_width() - 30:
+            x= window.get_width() - 30
 
         #********** Your game logic here **********
         
